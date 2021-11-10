@@ -1,5 +1,13 @@
+import noteCreate from "../cmps/note-create.cmp.js"
+
 export default {
     template: `
-    <h1>Hifasedf</h1>
-    `
+    <section class="keep-app">
+        <h2>hello</h2>
+        <note-create></note-create>
+    </section>
+    `,
+    components:{
+        noteCreate
+    }
 }

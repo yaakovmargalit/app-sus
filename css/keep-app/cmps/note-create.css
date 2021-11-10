@@ -1,0 +1,8 @@
+.note-created-bar input{
+    width: 45vw;
+    margin-top: 75px;
+    height: 6vh;
+    font-size: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

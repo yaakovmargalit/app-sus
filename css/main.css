@@ -1,0 +1,11 @@
+/* @import '/css/pages/home.css';
+@import 'css/keep-app/pages/note-app.cmp.css';
+@import 'css/keep-app/cmps/note-create.css'; */
+
+@import url('./pages/home.css');
+@import url('./keep-app/cmps/note-create.css');
+@import url('./keep-app/pages/note-app.cmp.css'); 
+
+
+
+

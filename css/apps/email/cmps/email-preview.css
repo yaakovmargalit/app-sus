@@ -1,0 +1,13 @@
+.email-preview {
+    display: flex;
+    justify-content: space-around;
+    border: 1px black solid;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.email-preview:hover {
+    transform: scale(1.01);
+    background-color: rgb(238, 236, 236);
+    box-shadow: 1px 1px 3px 1px rgb(100 121 143 / 12%);
+}

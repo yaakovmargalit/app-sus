@@ -4,13 +4,11 @@
 
 @import url('./pages/home.css');
 @import url('./keep-app/cmps/note-create.css');
-@import url('./keep-app/pages/note-app.cmp.css'); 
-
-
-
-
+@import url('./keep-app/pages/note-app.cmp.css');
 @import url(./apps/email/cmps/email-preview.css);
 @import url(./apps/email/cmps/email-folder-list.css);
 @import url(./apps/email/pages/email-app.css);
+@import url(./apps/email/cmps/email-compose.css);
+@import url(./apps/email/cmps/aside-app.css);
 
 /* @import url('/css/parts/fonts/fa/css/all.css'); */

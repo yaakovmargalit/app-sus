@@ -2,19 +2,27 @@
     display: flex;
     width: 1020px;
     margin: auto;
+    height: 100vh;
+    background-color: white;
 }
 
-.email-app>:first-child {
+.email-app .aside {
     flex: 2;
     display: flex;
     flex-direction: column;
 }
 
-.email-app>:last-child {
+.email-app .list {
     flex: 8;
     list-style: none;
 }
 
-.email-app>:last-child ul {
+.email-app .list ul {
     list-style: none;
+}
+
+.new-email {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
 }

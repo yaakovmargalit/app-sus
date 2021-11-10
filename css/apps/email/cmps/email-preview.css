@@ -1,13 +1,53 @@
 .email-preview {
+    position: relative;
     display: flex;
     justify-content: space-around;
     border: 1px black solid;
     padding: 5px;
+    padding-block: 10px;
     cursor: pointer;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
 .email-preview:hover {
     transform: scale(1.01);
     background-color: rgb(238, 236, 236);
     box-shadow: 1px 1px 3px 1px rgb(100 121 143 / 12%);
+}
+
+.email-preview>* {
+    width: 100%;
+}
+
+.hover-icons {
+    position: absolute;
+    display: none;
+    width: 100px;
+    justify-content: space-between;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: rgb(238, 236, 236);
+    padding-inline-end: 20px;
+}
+
+.hover-icons>* {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.hover-icons>*:hover {
+    background-color: rgb(221, 218, 218);
+}
+
+.email-preview:hover>.hover-icons {
+    display: flex;
+}
+
+.gold {
+    color: gold;
+}
+
+.bold {
+    font-weight: 400;
 }

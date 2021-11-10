@@ -6,3 +6,43 @@
     padding-left: 8px;
     padding-right: 8px;
 }
+
+.note-create {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin: 30px 0;
+}
+
+.note-create-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    border-radius: 3px;
+}
+
+
+.create-input {
+    font-size: 1.25em;
+    height: 3.125em;
+    width: 28em;
+    border: none;
+    padding-left: 1em;
+    border-radius: 3px;
+    outline: none;
+}
+
+.note-create-btn {
+    border: none;
+    font-size: 1.875em;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color .3s;
+    color: grey;    
+}
+
+.font-aws-icon{
+    margin-inline: 10px;
+}

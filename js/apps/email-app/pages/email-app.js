@@ -2,11 +2,15 @@ import { emailService } from "../services/email-service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import asideApp from "../cmps/aside-app.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
+import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
     <section class="email-app">
-        <aside-app class="aside" @new-email="setNewEmail" @filter="setFilter"/>
-        <email-list @emailTrashed="emailTrashed" @emailStarred="emailStarred" @emailRead="emailRead" v-if="emails" class="list" :emails="emailsToShow"></email-list>
+        <email-filter/>
+        <div class="main">
+            <aside-app class="aside" @new-email="setNewEmail" @filter="setFilter"/>
+            <email-list @emailTrashed="emailTrashed" @emailStarred="emailStarred" @emailRead="emailRead" v-if="emails" class="list" :emails="emailsToShow"></email-list>
+        </div>
         <email-compose @send="sendEmail" :emptyEmail="newEmail" @close="newEmail=null" v-if="newEmail"class="new-email"/>
     </section>
     `,
@@ -90,6 +94,7 @@ export default {
     components: {
         emailList,
         asideApp,
-        emailCompose
+        emailCompose,
+        emailFilter
     }
 }

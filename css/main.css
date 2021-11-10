@@ -10,5 +10,11 @@
 @import url(./../css/apps/email/pages/email-app.css);
 @import url(./../css/apps/email/cmps/email-compose.css);
 @import url(./../css/apps/email/cmps/aside-app.css);
+@import url(./../css/apps/email/cmps/email-filter.css);
 
 /* @import url('/css/parts/fonts/fa/css/all.css'); */
+
+@font-face {
+    font-family: fa;
+    src: url(./../css/parts/fonts/fa/fa-brands-400.ttf);
+}

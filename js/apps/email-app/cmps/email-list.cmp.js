@@ -5,11 +5,14 @@ export default {
     <section>
         <ul>
             <li v-for="email in emails">
-                <email-preview :email="email"></email-preview>
+                <email-preview @emailTrashed="$emit('emailTrashed',$event)" @emailStarred="$emit('emailStarred',$event)" @emailRead="$emit('emailRead',$event)" :email="email"></email-preview>
             </li>
         </ul>
     </section>
     `,
+    methods: {
+
+    },
     components: {
         emailPreview
     }

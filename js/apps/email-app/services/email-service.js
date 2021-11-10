@@ -21,8 +21,14 @@ export const emailService = {
     loggedinUser
 };
 
-function query() {
+function query(criteria) {
     return storageService.query(EMAILS_KEY)
+        .then(emails => {
+            return emails.filter(email => {
+
+                return email.status === criteria.status
+            })
+        })
 }
 
 function remove(emailId) {
@@ -30,11 +36,7 @@ function remove(emailId) {
 }
 
 function add(email) {
-    var newEmail = getEmptyEmail()
-    console.log(email)
-    console.log(newEmail)
-    storageService.post('books', newEmail)
-    return newEmail
+    return storageService.post('emails', email)
 }
 
 
@@ -50,9 +52,8 @@ function removeReview(bookId, reviewId) {
 
 }
 
-function save(book) {
-    if (book.id) return storageService.put(EMAILS_KEY, book);
-    else return storageService.post(EMAILS_KEY, book);
+function save(email) {
+    return storageService.put(EMAILS_KEY, email);
 }
 
 function getById(emailId) {
@@ -63,12 +64,14 @@ function getById(emailId) {
 function getEmptyEmail() {
     return {
         id: utilService.makeId(9),
+        status: 'sent',
         subject: '',
         body: '',
-        d: false,
-        sentAt: 1551133930594,
+        isRead: false,
+        isStarred: false,
+        sentAt: Date.now(),
         from: '',
-        fromName: '',
+        fromName: 'You',
         to: ''
     }
 }
@@ -81,9 +84,11 @@ function _createEmails() {
     if (!emails || !emails.length) {
         emails = [{
                 id: 'e101',
+                status: 'inbox',
                 subject: 'Important message',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511895784587,
                 from: 'ebay@ebay.com',
                 fromName: 'eBay',
@@ -91,9 +96,11 @@ function _createEmails() {
             },
             {
                 id: 'e102',
+                status: 'inbox',
                 subject: 'Miss you!',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511335745874,
                 from: 'ted@ebay.com',
                 fromName: 'TED',
@@ -101,9 +108,11 @@ function _createEmails() {
             },
             {
                 id: 'e103',
+                status: 'inbox',
                 subject: 'Time is up',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511895784887,
                 from: 'netflix@ebay.com',
                 fromName: 'Netflix',
@@ -111,9 +120,11 @@ function _createEmails() {
             },
             {
                 id: 'e104',
+                status: 'inbox',
                 subject: 'The invitation has arrived',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511887775898,
                 from: 'amazon@ebay.com',
                 fromName: 'Amazon',
@@ -121,9 +132,11 @@ function _createEmails() {
             },
             {
                 id: 'e105',
+                status: 'inbox',
                 subject: 'Miss you!',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511899875874,
                 from: 'udemy@ebay.com',
                 fromName: 'Udemy',
@@ -131,9 +144,11 @@ function _createEmails() {
             },
             {
                 id: 'e106',
+                status: 'inbox',
                 subject: 'The course is over',
                 body: 'Would love to catch up sometimes',
                 d: false,
+                isStarred: false,
                 sentAt: 15511885788796,
                 from: 'google@ebay.com',
                 fromName: 'Google',

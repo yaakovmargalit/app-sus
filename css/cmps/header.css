@@ -19,3 +19,10 @@
      color: white;
      text-decoration: none;
  }
+ 
+ header a {
+     color: white;
+     font-family: sans-serif;
+     text-decoration: none;
+     cursor: pointer;
+ }

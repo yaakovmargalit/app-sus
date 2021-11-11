@@ -3,6 +3,7 @@ import emailList from "../cmps/email-list.cmp.js"
 import asideApp from "../cmps/aside-app.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
 import emailFilter from "../cmps/email-filter.cmp.js"
+import { eventBus } from "../../../services/event-bus-service.js"
 export default {
     template: `
     <section class="email-app">
@@ -54,6 +55,12 @@ export default {
             emailService.add(email)
                 .then(() => {
                     this.loadEmails()
+                }).then(() => {
+                    const msg = {
+                        txt: 'sent succesfully',
+                        type: 'success'
+                    };
+                    eventBus.$emit('showMsg', msg);
                 })
             this.newEmail = null
         },

@@ -4,15 +4,15 @@
 
 
 
-@import url('./apps/note/global-styles/helpers.css');
-@import url('./apps/note/global-styles/base.css');
-@import url('./apps/note/pages/note-app.css');
+@import url('./../css/apps/note/global-styles/helpers.css');
+@import url('./../css/apps/note/global-styles/base.css');
+@import url('./../css/apps/note/pages/note-app.css');
 
-@import url('./apps/note/cmps/add-note.css');
-@import url('./apps/note/cmps/note-edit.css');
-@import url('./apps/note/cmps/note-filter.css');
-@import url('./apps/note/cmps/note-list.css');
-@import url('./apps/note/cmps/note-preview.css');
+@import url('./../css/apps/note/cmps/add-note.css');
+@import url('./../css/apps/note/cmps/note-edit.css');
+@import url('./../css/apps/note/cmps/note-filter.css');
+@import url('./../css/apps/note/cmps/note-list.css');
+@import url('./../css/apps/note/cmps/note-preview.css');
 
 
 
@@ -22,7 +22,7 @@
 @import url(./apps/email/cmps/email-compose.css);
 @import url(./apps/email/cmps/aside-app.css);
 
-@import url('./keep-app/cmps/note-create.css');
+@import url('./../css/apps/note/');
 @import url('./keep-app/pages/note-app.cmp.css');
 @import url(./../css/apps/email/cmps/email-preview.css);
 @import url(./../css/apps/email/cmps/email-folder-list.css);

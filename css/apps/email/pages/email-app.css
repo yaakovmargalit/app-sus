@@ -1,6 +1,7 @@
-.email-app {
+.email-app .main {
+    padding-top: 10px;
     display: flex;
-    width: 1020px;
+    max-width: 1020px;
     margin: auto;
     height: 100vh;
     background-color: white;

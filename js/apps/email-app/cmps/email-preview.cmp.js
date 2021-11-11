@@ -1,22 +1,47 @@
 export default {
     props: ['email'],
     template: `
-    <section class="email-preview">
-        <div>  <i @click="$emit('emailStarred',email.id)" class="far fa-star" :class="isStarred"></i> </div>
-      <div>  <h1 :class="isReadBold">{{email.fromName}}</h1> </div>
-      <div>  <h4 :class="isReadBold">{{email.subject}}</h4> </div>
-      <div>  <h4 :class="isReadBold">{{dateForDisplay}}</h4> </div>
-     <div class="hover-icons">
-     <i @click="$emit('emailRead',email.id)" :class="isRead"></i> 
-     <i @click="$emit('emailTrashed',email.id)" class="fas fa-trash"></i>
-     </div>
+    <section  >
+        <div @click.salf="isExpand=!isExpand" class="email-preview" :class="isReadBold">
+                <div class="star-icon">  <i @click.stop="$emit('emailStarred',email.id)" class="far fa-star" :class="isStarred"></i> </div>
+                <div>  <h1 :class="isReadBold">{{email.fromName}}</h1> </div>
+                <div>  <h4 :class="isReadBold">{{email.subject}}</h4> </div>
+                <div>  <h4 :class="isReadBold">{{dateForDisplay}}</h4> </div>
+            <div class="hover-icons">
+                <i @click.stop="$emit('emailRead',email.id)" :class="isRead"></i> 
+                <i @click.stop="$emit('emailTrashed',email.id)" class="fas fa-trash trash"></i>
+            </div>
+        </div>
+        <div v-if="isExpand" class="expand-preview">
+                <div class="header">
+                    <h2>{{email.subject}}</h2>
+                    <div class="header-icons">
+                    <router-link :to="'/email/'+email.id">
+                        <i class="fas fa-expand expand"></i>
+                    </router-link>
+                    
+                         <i class="fas fa-reply reply"></i>
+                         <i class="fas fa-paper-plane paper-plane"></i>
+                         <i @click="$emit('emailTrashed',email.id)"class="fas fa-trash trash"></i>
+                    </div>
+                </div>
+                <div class="address">
+                        <h4>{{email.fromName}}</h4>
+                        <p class="from-address">{{email.from}}</p>
+                </div>
+                <div class="body">
+                        <h4>{{email.body}}</h4>
+                </div>
+        </div>
     </section>
     `,
     data() {
         return {
             monthNames: ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
-            ]
+            ],
+            isExpand: false
+
         }
     },
     computed: {

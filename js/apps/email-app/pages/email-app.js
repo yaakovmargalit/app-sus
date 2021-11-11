@@ -2,11 +2,15 @@ import { emailService } from "../services/email-service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import asideApp from "../cmps/aside-app.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
+import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
     <section class="email-app">
-        <aside-app class="aside" @new-email="setNewEmail" @filter="setFilter"/>
-        <email-list @emailTrashed="emailTrashed" @emailStarred="emailStarred" @emailRead="emailRead" v-if="emails" class="list" :emails="emailsToShow"></email-list>
+        <email-filter @doFilter="doFilter"/>
+        <div class="main">
+            <aside-app class="aside" @new-email="setNewEmail" @filter="setFilter"/>
+            <email-list @emailTrashed="emailTrashed" @emailStarred="emailStarred" @emailRead="emailRead" v-if="emails" class="list" :emails="emailsToShow"></email-list>
+        </div>
         <email-compose @send="sendEmail" :emptyEmail="newEmail" @close="newEmail=null" v-if="newEmail"class="new-email"/>
     </section>
     `,
@@ -18,8 +22,8 @@ export default {
             criteria: {
                 status: 'inbox',
                 txt: 'puki', // no need to support complex text search 
-                isRead: true, // (optional property, if missing: show all) 
-                isStared: true, // (optional property, if missing: show all) 
+                isRead: false, // (optional property, if missing: show all) 
+                isStared: false, // (optional property, if missing: show all) 
                 lables: [] // has any of the labels
             }
         }
@@ -32,9 +36,16 @@ export default {
             this.criteria.status = val
             this.loadEmails()
         },
+        doFilter(filter) {
+            this.criteria.isRead = filter.read
+            this.criteria.isStared = filter.stared
+        },
         loadEmails() {
-            emailService.query(this.criteria)
-                .then(emails => this.emails = emails)
+            emailService.query()
+                .then(emails => {
+                    // emails = emails.filter(email => email.status === this.criteria.status)
+                    this.emails = emails
+                })
         },
         setNewEmail() {
             this.newEmail = emailService.getEmptyEmail()
@@ -74,8 +85,16 @@ export default {
     },
     computed: {
         emailsToShow() {
-            console.log(this.criteria.status)
-            return this.emails
+            var res = []
+            return this.emails.filter(email => {
+                // if (email.status === this.criteria.status) res.push(email)
+                // if(this.criteria.isStared&&!email.isStared)
+
+                return email.status === this.criteria.status
+                    // email.isStarred === this.criteria.isStared &&
+                    // email.isRead === this.criteria.isRead
+
+            })
         }
     },
     // watch: {
@@ -90,6 +109,7 @@ export default {
     components: {
         emailList,
         asideApp,
-        emailCompose
+        emailCompose,
+        emailFilter
     }
 }

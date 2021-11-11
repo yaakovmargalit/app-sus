@@ -1,0 +1,26 @@
+.note-filter {
+    border: 2px solid rgb(156, 147, 147);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.note-filter-container .note-input {
+    border: none;
+    width: 257px;
+}
+
+.note-search {
+    font-size: 20px;
+}
+
+.note-search i {
+    color: rgb(156, 156, 156);
+}
+
+.note-search i:hover {
+    color: #6f9b97;
+}
+
+.note-search input {
+    display: none;
+}

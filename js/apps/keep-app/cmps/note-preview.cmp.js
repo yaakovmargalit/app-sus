@@ -14,7 +14,7 @@ export default {
             
             <component :is="note.type" :info="note.info" :noteId="note.id" class="note-content" />
             <hr/>
-            <note-edit :noteId = "note.id" class="note-edit flex"></note-edit>
+            <note-edit  :note = "note" class="note-edit flex"></note-edit>
     
         </section>
     `,
@@ -35,4 +35,3 @@ export default {
     }
 
 }
-

@@ -19,10 +19,11 @@ export default {
                     <router-link :to="'/email/'+email.id">
                         <i class="fas fa-expand expand"></i>
                     </router-link>
-                    
-                         <i class="fas fa-reply reply"></i>
-                         <i class="fas fa-paper-plane paper-plane"></i>
-                         <i @click="$emit('emailTrashed',email.id)"class="fas fa-trash trash"></i>
+                    <i class="fas fa-reply reply"></i>
+                    <router-link :to="'/keep?body='+ email.body">
+                        <i class="fas fa-paper-plane paper-plane"></i>
+                    </router-link>
+                    <i @click="$emit('emailTrashed',email.id)"class="fas fa-trash trash"></i>
                     </div>
                 </div>
                 <div class="address">

@@ -30,6 +30,11 @@ export default {
         }
     },
     created() {
+        if (this.$route.query.body) {
+            var empty = emailService.getEmptyEmail()
+            empty.body = this.$route.query.body
+            this.newEmail = empty
+        }
         this.loadEmails()
     },
     methods: {
@@ -47,6 +52,7 @@ export default {
                     // emails = emails.filter(email => email.status === this.criteria.status)
                     this.emails = emails
                 })
+
         },
         setNewEmail() {
             this.newEmail = emailService.getEmptyEmail()

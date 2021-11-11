@@ -1,0 +1,11 @@
+.back {
+    display: block;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border: 1px black solid;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}

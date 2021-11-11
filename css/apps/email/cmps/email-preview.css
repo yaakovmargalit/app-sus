@@ -14,15 +14,6 @@
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
-i {
-    cursor: pointer;
-    font-family: fa;
-}
-
-.trash::before {
-    content: '\f1f8';
-}
-
 .email-preview:hover {
     transform: scaleX(1.01);
     /* /* background-color: rgb(238, 236, 236); */

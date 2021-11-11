@@ -22,7 +22,7 @@ const routes = [{
         component: emailDetails
     },
     {
-        path: '/keep',
+        path: '/keep/:newKeep?',
         component: keepApp
     },
     // {

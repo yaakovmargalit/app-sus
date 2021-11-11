@@ -1,5 +1,5 @@
 import { noteService } from '../services/note-service.js'
-// import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 
 
 
@@ -49,12 +49,12 @@ export default {
             noteService.changeNoteColor(this.noteId, color);
         },
         onRemove() {
-            // eventBus.$emit('removeNote', this.noteId);
+            eventBus.$emit('removeNote', this.noteId);
             const msg = {
                 txt: 'Note removed',
                 type: 'success'
           }
-            // eventBus.$emit(EVENT_SHOW_MSG, msg)
+            eventBus.$emit(EVENT_SHOW_MSG, msg)
         },
         pinNote() {
             noteService.pinToStart(this.noteId);

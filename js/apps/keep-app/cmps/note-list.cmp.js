@@ -1,6 +1,6 @@
 
 import notePreview from './note-preview.cmp.js';
-// import { eventBus } from '../../../services/event-bus-service.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 
 export default {
@@ -28,12 +28,12 @@ export default {
            
         }
     },
-    // created() {
-    //     eventBus.$on('removeNote', (id) => {
-    //         this.emitRemove(id);
-    //     });
+    created() {
+        eventBus.$on('removeNote', (id) => {
+            this.emitRemove(id);
+        });
 
-    // },
+    },
     components: {
         notePreview,
     },

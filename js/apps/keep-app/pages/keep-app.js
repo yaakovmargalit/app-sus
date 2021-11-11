@@ -8,7 +8,7 @@ import addNote from '../cmps/add-note.cmp.js'
 
 
 export default {
-    name: 'note-app',
+    name: 'keep-app',
     template: `
     <section class="note-app">
         

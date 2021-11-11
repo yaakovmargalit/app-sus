@@ -1,5 +1,5 @@
 import { noteService } from '../services/note-service.js'
-// import { eventBus, EVENT_SHARE_AS_NOTE } from '../../../services/event-bus-service.js'
+import { eventBus, EVENT_SHARE_AS_NOTE } from '../../../services/event-bus-service.js'
 
 
 export default {
@@ -60,12 +60,12 @@ export default {
         }
 
     },
-    // created() {
-    //     eventBus.$on(EVENT_SHARE_AS_NOTE, data => {
-    //           this.addFromMail(data);
-    //     })
+    created() {
+        eventBus.$on(EVENT_SHARE_AS_NOTE, data => {
+              this.addFromMail(data);
+        })
 
-    // }
+    }
 
 
 }

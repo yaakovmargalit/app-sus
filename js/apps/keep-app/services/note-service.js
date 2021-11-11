@@ -165,7 +165,7 @@ function _createNotes() {
                     txt: "my first note"
                 },
                 style: {
-                    backgroundColor: "#F6B6B4"
+                    backgroundColor: "#D6ECCB"
                 }
             },
             {
@@ -173,11 +173,11 @@ function _createNotes() {
                 type: "noteImg",
                 isPinned: true,
                 info: {
-                    url: "https://picsum.photos/id/237/200/120",
-                    title: "My cute Dog"
+                    url: "https://i.ytimg.com/vi/A4_Czor6KVY/maxresdefault.jpg",
+                    title: "fun dog"
                 },
                 style: {
-                    backgroundColor: "#F6B6B4"
+                    backgroundColor: "#D6ECCB"
                 }
             },
 

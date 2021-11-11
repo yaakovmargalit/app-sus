@@ -28,9 +28,9 @@ export default {
         }
     },
     methods: {
-        // emitFilter() {
-        //     this.$emit('doFilter', this.filterBy);
-        // },
+        emitFilter() {
+            this.$emit('doFilter', this.filterBy);
+        },
         onResetFilter() {
             this.$emit('doFilter', { byText: '', created: '', isPinned: this.filterBy.isPinned })
             document.querySelector('.note-input').value = ''

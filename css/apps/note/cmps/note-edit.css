@@ -10,6 +10,7 @@
 .note-edit-container i {
     cursor: pointer;
     color: #777777;
+    font-size: 20px;
 }
 
 .note-edit-container li {

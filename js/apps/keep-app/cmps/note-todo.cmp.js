@@ -14,7 +14,7 @@ export default {
                     </label>
 
                     <label v-else :style="{'text-decoration': 'none'}"> 
-                        <input type="checkbox" v-model="todo.isDone" @change="onCheckbox">
+                        <input type="checkbox"  v-model="todo.isDone" @change="onCheckbox">
                         {{ todo.txt }}
                     </label>
                 </li>

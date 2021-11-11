@@ -13,7 +13,6 @@ export default {
         <section class="note-preview">
             
             <component :is="note.type" :info="note.info" :noteId="note.id" class="note-content" />
-            <hr/>
             <note-edit :noteId = "note.id" class="note-edit flex"></note-edit>
     
         </section>

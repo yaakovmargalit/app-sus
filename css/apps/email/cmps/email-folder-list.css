@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-top: 20px;
     margin-right: 10px;
+    background-color: white;
 }
 
 .folder-btn {
@@ -16,7 +17,7 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    font-weight: bold;
 }
 
 .folder-btn .count {
@@ -32,8 +33,38 @@
     color: rgb(255, 61, 61);
 }
 
+.folder-btn:focus {
+    background-color: rgb(252, 214, 214);
+    color: rgb(255, 61, 61);
+}
+
 .activ {
     background-color: rgb(252, 214, 214);
     color: rgb(255, 61, 61);
     font-weight: bold;
+}
+
+.burger-btn {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .email-folder-list {
+        /* position: fixed; */
+        /* width: 400px; */
+        background-color: white;
+        height: 0;
+        overflow: hidden;
+        /* flex: 0; */
+    }
+    .email-folder-list.open {
+        /* position: fixed; */
+        /* width: 400px; */
+        background-color: white;
+        height: 100%;
+    }
+    .burger-btn {
+        display: block;
+        font-size: 30px;
+    }
 }

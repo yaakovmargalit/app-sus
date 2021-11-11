@@ -5,7 +5,7 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     name: 'noteEdit',
-    props: ['noteId'],
+    props: ['note'],
     template: `
     <section >
         <ul class="note-edit-container flex">
@@ -22,6 +22,12 @@ export default {
             <li @click="onRemove">
                 <i class="fas fa-trash"></i>
             </li>
+
+            <router-link :to="'/email?body='+ note.info.txt">
+                <i class="fas fa-envelope"></i>
+            </router-link>
+
+            
            
         </ul>
         <ul v-if="showColors" class="colors-container flex">
@@ -46,18 +52,18 @@ export default {
         changeNoteColor(event, color) {
             console.log('event-change note color', event, color)
             this.showColors = false;
-            noteService.changeNoteColor(this.noteId, color);
+            noteService.changeNoteColor(this.note.id, color);
         },
         onRemove() {
-            eventBus.$emit('removeNote', this.noteId);
+            // eventBus.$emit('removeNote', this.note.id);
             const msg = {
-                txt: 'Note removed',
-                type: 'success'
-          }
-            eventBus.$emit(EVENT_SHOW_MSG, msg)
+                    txt: 'Note removed',
+                    type: 'success'
+                }
+                // eventBus.$emit(EVENT_SHOW_MSG, msg)
         },
         pinNote() {
-            noteService.pinToStart(this.noteId);
+            noteService.pinToStart(this.note.id);
         }
 
     }

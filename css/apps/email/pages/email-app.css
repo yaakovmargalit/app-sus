@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .email-app .main {
     padding-top: 10px;
     display: flex;
@@ -26,4 +30,13 @@
     position: absolute;
     right: 40px;
     bottom: 30px;
+}
+
+@media (max-width:600px) {
+    .email-app .main {
+        flex-direction: column;
+    }
+    .email-app .aside {
+        flex: 0;
+    }
 }

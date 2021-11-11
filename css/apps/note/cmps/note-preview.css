@@ -30,6 +30,6 @@
     object-fit: cover;
 }
 
-li {
+.note-preview li {
     height: 30px;
 }

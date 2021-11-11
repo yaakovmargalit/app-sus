@@ -67,7 +67,7 @@ function getEmptyEmail() {
         isRead: false,
         isStarred: false,
         sentAt: Date.now(),
-        from: '',
+        from: 'user@appsus.com',
         fromName: 'You',
         to: ''
     }

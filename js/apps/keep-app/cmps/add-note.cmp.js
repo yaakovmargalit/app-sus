@@ -30,6 +30,17 @@ export default {
             }
         }
     },
+    created() {
+        if (this.$route.query.body) {
+            this.addFromMail(this.$route.query.body)
+            this.$emit('load')
+        }
+    },
+    // mounted() {
+    //     if (this.$route.query.body) {
+    //         this.addFromMail(this.$route.query.body)
+    //     }
+    // },
     computed: {
         placeholder() {
             switch (this.noteData.type) {
@@ -47,7 +58,7 @@ export default {
 
     methods: {
         addNote() {
-            noteService.addNote({ ...this.noteData })
+            noteService.addNote({...this.noteData })
             this.noteData.val = '';
         },
         setType(type) {
@@ -55,7 +66,7 @@ export default {
         },
         addFromMail(data) {
             this.noteData.val = data;
-            this.setType('noteText');
+            //  this.setType('noteText');
             this.addNote();
         }
 

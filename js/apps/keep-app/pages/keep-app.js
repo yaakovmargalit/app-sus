@@ -1,4 +1,3 @@
-
 import { noteService } from '../services/note-service.js';
 import noteList from '../cmps/note-list.cmp.js';
 import notePreview from '../cmps/note-preview.cmp.js'
@@ -12,7 +11,7 @@ export default {
     template: `
     <section class="note-app">
         
-        <add-note/>
+        <add-note @load="load"/>
         <note-filter class= "flex" @doFilter="setFilter" />
         <note-details v-if="selectedNote"  :note="selectedNote"/>
         <note-list :notes="notesToShow" @remove="removeNote" @selected="selectNote" />
@@ -53,13 +52,18 @@ export default {
         }
     },
     methods: {
-
+        load() {
+            noteService.getNotes()
+                .then(notes => {
+                    this.notes = notes;
+                });
+        },
         removeNote(noteId) {
             noteService.remove(noteId);
         },
         setFilter(filterBy) {
             let filter = {};
-            filter = { ...filterBy };
+            filter = {...filterBy };
             this.filterBy = filter;
         },
         selectNote(noteId) {

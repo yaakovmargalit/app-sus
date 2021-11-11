@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-right: 10px;
 }
 
 .folder-btn {
@@ -12,6 +13,14 @@
     border-top-right-radius: 20px;
     text-align: left;
     padding-left: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.folder-btn .count {
+    margin-right: 15px;
 }
 
 .folder-btn i {
@@ -19,5 +28,12 @@
 }
 
 .folder-btn:hover {
-    background-color: rgb(255, 144, 144);
+    background-color: rgb(252, 214, 214);
+    color: rgb(255, 61, 61);
+}
+
+.activ {
+    background-color: rgb(252, 214, 214);
+    color: rgb(255, 61, 61);
+    font-weight: bold;
 }

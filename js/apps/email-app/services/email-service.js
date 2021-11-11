@@ -21,13 +21,10 @@ export const emailService = {
     loggedinUser
 };
 
-function query(criteria) {
+function query() {
     return storageService.query(EMAILS_KEY)
         .then(emails => {
-            return emails.filter(email => {
-
-                return email.status === criteria.status
-            })
+            return emails
         })
 }
 
@@ -86,8 +83,9 @@ function _createEmails() {
                 id: 'e101',
                 status: 'inbox',
                 subject: 'Important message',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511895784587,
                 from: 'ebay@ebay.com',
@@ -98,8 +96,9 @@ function _createEmails() {
                 id: 'e102',
                 status: 'inbox',
                 subject: 'Miss you!',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511335745874,
                 from: 'ted@ebay.com',
@@ -110,8 +109,9 @@ function _createEmails() {
                 id: 'e103',
                 status: 'inbox',
                 subject: 'Time is up',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511895784887,
                 from: 'netflix@ebay.com',
@@ -122,8 +122,9 @@ function _createEmails() {
                 id: 'e104',
                 status: 'inbox',
                 subject: 'The invitation has arrived',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511887775898,
                 from: 'amazon@ebay.com',
@@ -134,8 +135,9 @@ function _createEmails() {
                 id: 'e105',
                 status: 'inbox',
                 subject: 'Miss you!',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511899875874,
                 from: 'udemy@ebay.com',
@@ -146,8 +148,9 @@ function _createEmails() {
                 id: 'e106',
                 status: 'inbox',
                 subject: 'The course is over',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 d: false,
+                isRead: false,
                 isStarred: false,
                 sentAt: 15511885788796,
                 from: 'google@ebay.com',

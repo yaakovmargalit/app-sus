@@ -24,12 +24,21 @@ i {
 }
 
 .email-preview:hover {
-    background-color: rgb(238, 236, 236);
+    transform: scaleX(1.01);
+    /* /* background-color: rgb(238, 236, 236); */
     box-shadow: 1px 1px 3px 1px rgb(100 121 143 / 12%);
 }
 
 .email-preview>* {
     width: 100%;
+}
+
+.star-icon {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-inline: 20px;
 }
 
 .expand-preview {
@@ -46,7 +55,7 @@ i {
     right: 0;
     top: 12px;
     /* transform: translate(0, -50%); */
-    background-color: rgb(238, 236, 236);
+    /* background-color: rgb(238, 236, 236); */
     padding-inline-end: 20px;
 }
 
@@ -69,6 +78,7 @@ i {
 
 .bold {
     font-weight: 400;
+    background-color: rgb(221, 218, 218);
 }
 
 
@@ -106,5 +116,8 @@ i {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-inline: 20px;
+    overflow: hidden;
 }

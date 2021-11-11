@@ -1,4 +1,37 @@
 .email-filter {
     height: 130px;
     background-color: white;
+    border-bottom: rgb(196, 196, 190) 0.5px solid;
+    position: relative;
+}
+
+.google-logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 150px;
+}
+
+.email-filter form {
+    display: flex;
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email-filter form .search-txt {
+    padding: 8px;
+    width: 80%;
+    outline: none;
+    border-radius: 10px;
+}
+
+.email-filter form .search-check {
+    margin: 8px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
 }

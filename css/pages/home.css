@@ -1,0 +1,10 @@
+.home-page .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page .body img {
+    max-width: 600px;
+    margin: 20px;
+}

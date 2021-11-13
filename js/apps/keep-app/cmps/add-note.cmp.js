@@ -71,12 +71,7 @@ export default {
         }
 
     },
-    created() {
-        eventBus.$on(EVENT_SHARE_AS_NOTE, data => {
-              this.addFromMail(data);
-        })
 
-    }
 
 
 }

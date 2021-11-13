@@ -11,8 +11,15 @@ export default {
                     <h2>{{currEmail.subject}}</h2>
                     <div class="header-icons">                    
                          <i class="fas fa-reply reply"></i>
-                         <i class="fas fa-paper-plane paper-plane"></i>
-                         <i @click="$emit('emailTrashed',email.id)"class="fas fa-trash trash"></i>
+                         <router-link :to="'/keep?body='+ currEmail.body">
+                        <i class="fas fa-paper-plane paper-plane"></i>
+                    </router-link>
+                         <router-link :to="'/email?body='+ currEmail.body">
+                        <i class="fas fa-external-link-square-alt"></i>
+                          </router-link>
+                         <!-- <i class="fas fa-external-link-square-alt">
+                             <router-link :to="'/email?body='+ currEmail.body"></router-link>
+                         </i> -->
                     </div>
                 </div>
                 <div class="address">

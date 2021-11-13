@@ -45,6 +45,8 @@
     outline: none;
     border: none;
     font-size: 18px;
+    background-color: transparent;
+    width: 100%;
 }
 
 .email-compose form textarea {
@@ -57,5 +59,18 @@
 }
 
 .email-compose form .mail-body {
-    min-height: 223px;
+    min-height: 150px;
+}
+
+.data-input {
+    display: flex;
+}
+
+.data-input>:last-child {
+    margin-left: 5px;
+}
+
+.send-btn {
+    border: none !important;
+    background-color: rgb(214, 214, 214) !important;
 }

@@ -2,7 +2,7 @@ export default {
     props: ['email'],
     template: `
     <section  >
-        <div @click.salf="isExpand=!isExpand" class="email-preview" :class="isReadBold">
+        <div @click.salf="expand" class="email-preview" :class="isReadBold">
                 <div class="star-icon">  <i @click.stop="$emit('emailStarred',email.id)" class="far fa-star" :class="isStarred"></i> </div>
                 <div>  <h1 :class="isReadBold">{{email.fromName}}</h1> </div>
                 <div>  <h4 :class="isReadBold">{{email.subject}}</h4> </div>
@@ -16,8 +16,8 @@ export default {
                 <div class="header">
                     <h2>{{email.subject}}</h2>
                     <div class="header-icons">
-                    <router-link :to="'/email/'+email.id">
-                        <i class="fas fa-expand expand"></i>
+                    <router-link :to="'/email/'+email.id" >
+                        <i class="fas fa-expand expand" @click="$emit('emailRead',email.id)"></i>
                     </router-link>
                     <i class="fas fa-reply reply"></i>
                     <router-link :to="'/keep?body='+ email.body">
@@ -43,6 +43,11 @@ export default {
             ],
             isExpand: false
 
+        }
+    },
+    methods: {
+        expand() {
+            this.isExpand = !this.isExpand
         }
     },
     computed: {

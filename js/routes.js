@@ -18,6 +18,10 @@ const routes = [{
         component: emailApp
     },
     {
+        path: '/email/:emailId',
+        component: emailDetails
+    },
+    {
         path: '/keep',
         component: keepApp
     },

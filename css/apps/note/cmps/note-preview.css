@@ -31,6 +31,13 @@
     object-fit: cover;
 }
 
+
 /* .note-preview li {
     height: 30px;
 } */
+
+@media (max-width:600px) {
+    .note-preview .note-content {
+        overflow-y: scroll;
+    }
+}

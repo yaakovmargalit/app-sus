@@ -9,3 +9,8 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.body {
+    margin-inline: 15px;
+    margin-top: 20px;
+}

@@ -22,9 +22,9 @@ export default {
             // filterBy: 'inbox',
             criteria: {
                 status: 'inbox',
-                txt: 'puki', // no need to support complex text search 
+                txt: '', // no need to support complex text search 
                 isRead: false, // (optional property, if missing: show all) 
-                isStared: false, // (optional property, if missing: show all) 
+                isStarred: false, // (optional property, if missing: show all) 
                 lables: [] // has any of the labels
             }
         }
@@ -43,13 +43,16 @@ export default {
             this.loadEmails()
         },
         doFilter(filter) {
-            this.criteria.isRead = filter.read
-            this.criteria.isStared = filter.stared
+            console.log(filter);
+            setTimeout(() => {
+                this.criteria.isRead = filter.read
+                this.criteria.isStarred = filter.stared
+                this.criteria.txt = filter.searchTxt
+            }, 3)
         },
         loadEmails() {
             emailService.query()
                 .then(emails => {
-                    // emails = emails.filter(email => email.status === this.criteria.status)
                     this.emails = emails
                 })
 
@@ -98,14 +101,22 @@ export default {
     },
     computed: {
         emailsToShow() {
-            var res = []
             return this.emails.filter(email => {
+
+                var searchStr
+                if (this.criteria.txt)
+                    searchStr = this.criteria.txt.toLowerCase();
+
                 // if (email.status === this.criteria.status) res.push(email)
                 // if(this.criteria.isStared&&!email.isStared)
 
-                return email.status === this.criteria.status
-                    // email.isStarred === this.criteria.isStared &&
-                    // email.isRead === this.criteria.isRead
+                return email.status === this.criteria.status &&
+                    (email.subject.toLowerCase().includes(searchStr) || !this.criteria.txt) &&
+                    (email.isStarred === this.criteria.isStarred || !this.criteria.isStarred) &&
+                    (email.isRead === this.criteria.isRead || !this.criteria.isRead)
+
+                // email.isStarred === this.criteria.isStared &&
+                // email.isRead === this.criteria.isRead
 
             })
         }

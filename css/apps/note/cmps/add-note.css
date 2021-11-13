@@ -7,6 +7,7 @@
     border: 2px solid rgb(156, 147, 147);
     border-radius: 10px;
     background-color: #fff;
+    padding: 15px;
 }
 
 .add-input-container button {
@@ -25,5 +26,6 @@
 .add-input-container .add-note-input input {
     width: 180px;
     border: none;
+    font-size: 20px;
     background-color: transparent;
 }

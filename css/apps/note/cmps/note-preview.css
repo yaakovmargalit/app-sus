@@ -12,6 +12,7 @@
 
 .note-preview .note-edit {
     flex-direction: column;
+    position: relative;
 }
 
 .note-preview .note-content ul {
@@ -30,6 +31,6 @@
     object-fit: cover;
 }
 
-.note-preview li {
+/* .note-preview li {
     height: 30px;
-}
+} */

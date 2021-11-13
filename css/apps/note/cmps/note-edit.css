@@ -28,7 +28,17 @@
     justify-content: space-around;
     width: 120px;
     padding-right: 40px;
+    position: absolute;
+    top: 20px;
 }
+
+.colors-container .color{
+    padding: 10px;
+    margin-top: 15px;
+    margin-inline: 3px;
+}
+
+
 
 .color {
     cursor: pointer;

@@ -165,7 +165,7 @@ function _createNotes() {
                     txt: "my first note"
                 },
                 style: {
-                    backgroundColor: "#D6ECCB"
+                    backgroundColor: "#C9DEF5"
                 }
             },
             {
@@ -174,13 +174,106 @@ function _createNotes() {
                 isPinned: true,
                 info: {
                     url: "https://i.ytimg.com/vi/A4_Czor6KVY/maxresdefault.jpg",
-                    title: "fun dog"
+                    title: "funny dog"
                 },
                 style: {
-                    backgroundColor: "#D6ECCB"
+                    backgroundColor: "#C9DEF5"
                 }
             },
-
+            {
+                id: utilService.makeId(),
+                type: "noteTodo",
+                isPinned: true,
+                info: {
+                    title: "Things to do:",
+                    todos: [
+                        { txt: "go to gym", doneAt: null },
+                        { txt: "eat", doneAt: 187111111 },
+                        { txt: "sleep", doneAt: 187111111 }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#FEF0DB"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteVideo",
+                isPinned: true,
+                info: {
+                    videoUrl: "https://i.pinimg.com/originals/a7/51/b0/a751b0266f5f96c865bc49f49adadcc3.gif",
+                    title: "video",
+                },
+                style: {
+                    backgroundColor: "#FEF0DB"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteText",
+                isPinned: true,
+                info: {
+                    txt: "do homework"
+                },
+                style: {
+                    backgroundColor: "#FEF0DB"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteTodo",
+                isPinned: true,
+                info: {
+                    title: "Things to do:",
+                    todos: [
+                        { txt: "vue ex", doneAt: null },
+                        { txt: "project", doneAt: 187111111 },
+                        { txt: "run", doneAt: 187111111 }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#FEF0DB"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteText",
+                isPinned: true,
+                info: {
+                    txt: "eat dinner"
+                },
+                style: {
+                    backgroundColor: "#C8F2D7"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteTodo",
+                isPinned: true,
+                info: {
+                    title: "Things to do:",
+                    todos: [
+                        { txt: "brackfest", doneAt: null },
+                        { txt: "Vegetables", doneAt: 187111111 },
+                        { txt: "Some apples", doneAt: 187111111 }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#C8F2D7"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteImg",
+                isPinned: true,
+                info: {
+                    url: "https://media.istockphoto.com/photos/closeup-portrait-of-funny-ginger-cat-wearing-sunglasses-isolated-on-picture-id1253696116?b=1&k=20&m=1253696116&s=170667a&w=0&h=on5OoVflqZxsocVCoiJjubwY2dF6QwBopf3bXxBSfrs=",
+                    title: "cool cat"
+                },
+                style: {
+                    backgroundColor: "#C8F2D7"
+                }
+            },
         ];
         utilService.saveToStorage(STORAGE_KEY, notes);
         return Promise.resolve(notes);

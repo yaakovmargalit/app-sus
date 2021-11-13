@@ -1,10 +1,62 @@
-.home-page .body {
+ .home-page .body {
+   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/img/bgc2.jpg");
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        
+}
+
+.home-page .body h2{
+    color: white;
+    font-size: 75px;
+    font-family: sans-serif;
+    position: absolute;
+    top: 230px;
+}
+.home-page .body a{
+    color: white;
+    font-size: 26px;
+    font-family: sans-serif;
+    border: 1px solid;
+    position: absolute;
+    top: 320px;
+    background-color: coral;
+    padding: 6px;
+    border-radius: 10px;
+    box-shadow: -10px 9px 10px 0px rgb(0 0 0 / 15%);
+    transform: scale(1);
+    transition: all .8s;
+}
+
+.home-page .body a:hover {
+    transform: scale(1.05);
+}
+
+.gallery-header{
+    display: flex;
+    justify-content: center;
+    font-size: 29px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #ffa623;
+}
+
+
+.gallery-apps{
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.home-page .body img {
-    max-width: 600px;
-    margin: 20px;
+    background-image: linear-gradient(360deg, rgb(255 255 255), rgb(247 181 83));
+ 
 }

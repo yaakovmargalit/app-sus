@@ -19,7 +19,7 @@ export default {
     <section class="main-header">
 
         <router-link to="/">
-            <img class="logo-icon" src="img/logo-header.png" alt="logo"  />
+            <img class="logo-icon" src="img/logoooo.png" alt="logo"  />
         </router-link>
             <div class="menu-icon-container">
                 <img class="menu-icon" id="menuIcon" @click="isMenuOpen = !isMenuOpen"

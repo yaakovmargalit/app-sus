@@ -10,8 +10,13 @@
     padding: 15px;
 }
 
+.add-note-input{
+    width: 250px;
+}
+
 .add-input-container button {
     font-size: 20px;
+    margin-inline: 6px;
     color: rgb(156, 156, 156);
 }
 

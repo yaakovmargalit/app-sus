@@ -1,7 +1,7 @@
 export default {
     template: `
     <div class="email-filter">
-        <img class="google-logo" src="img/Gmail-logo.png" alt="">
+        <img class="google-logo" src="./../../../../img/Gmail-logo.png" alt="">
         <form >
             <input class="search-txt" placeholder="Search..." @input="$emit('doFilter',filter)" v-model="filter.searchTxt" type="text">
             <div>

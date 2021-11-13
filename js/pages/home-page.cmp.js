@@ -4,6 +4,6 @@ export default {
         <div class="body">
             <img src="./../../img/computer.jpg" alt="">
         </div>
-    </section>
+    </section> 
     `
 }

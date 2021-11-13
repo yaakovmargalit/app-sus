@@ -22,10 +22,13 @@ export default {
             <li @click="onRemove">
                 <i class="fas fa-trash"></i>
             </li>
-
-            <router-link :to="'/email?body='+ note.info.txt">
-                <i class="fas fa-envelope"></i>
-            </router-link>
+            
+            <li>
+                <router-link :to="'/email?body='+ note.info.txt">
+                    <i class="fas fa-envelope"></i>
+                </router-link>
+            </li>
+           
 
             
            
@@ -55,7 +58,7 @@ export default {
             noteService.changeNoteColor(this.note.id, color);
         },
         onRemove() {
-            // eventBus.$emit('removeNote', this.note.id);
+            eventBus.$emit('removeNote', this.note.id);
             const msg = {
                     txt: 'Note removed',
                     type: 'success'
